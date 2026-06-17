@@ -280,6 +280,7 @@ em{color:#aeb6c2;font-style:italic}
       </ul>
       <div class="h-foot">⚠️ <strong>유사 카테고리만 보면 모두가 같은 소재</strong>를 만든다 — 다른 카테고리·해외·자사 신호를 꼭 섞어라.<br>💬 리뷰·댓글·검색어 같은 <strong>'고객 언어'는 소재(영상) 레퍼런스가 아니다</strong> → Step 3에서 '왜 좋아하나' 해석 + 기획서(Step 5) 메시지(VP·카피)의 원재료로 쓴다.</div>
     </div>
+    <div class="note-block">🎬 수집한 레퍼런스 영상은 BQ <code>ref_videos</code> 테이블에 색인해 관리한다(저장·검색·열기) → <strong>부록 3</strong> 참고</div>
   </div>
 
   <!-- Step 3 -->
@@ -551,6 +552,43 @@ em{color:#aeb6c2;font-style:italic}
         </tbody>
       </table>
     </div>
+  </div>
+
+  <!-- 부록 3 — 레퍼런스 영상 관리 -->
+  <div class="section">
+    <div class="section-title"><span class="step-num" style="background:#0d9488">📁</span> 부록 3 — 레퍼런스 영상 관리 (ref_videos · BQ 연동) <span class="tag tag-mine">세팅 완료</span></div>
+    <p style="font-size:13px;color:#9aa0a6;margin-bottom:4px">수집한 레퍼런스 영상을 <strong style="color:#cbd2dc">웍스 드라이브</strong>에 저장하고, 그 <strong style="color:#cbd2dc">링크+메타데이터를 BQ <code>ref_videos</code> 테이블에 색인</strong>해 제목·제품으로 바로 꺼내 쓰는 체계. 테이블·스크립트(<code>ref_videos.py</code>)는 이미 만들어져 있음. <em>(※ 여기선 "이런 체계가 있다"만 기록 — 실행은 별도)</em></p>
+
+    <div class="how-block">
+      <div class="h-label">⚙️ 구조</div>
+      <ul class="how-list">
+        <li><strong>웍스</strong>에 영상 파일 보관 → BQ엔 <strong>링크+텍스트 정보만</strong> 색인 → 제목으로 찾아 링크를 꺼냄</li>
+        <li>⚠️ 링크 페이지의 <strong>텍스트(제목·설명)만</strong> 읽음(영상 화면 분석 X) · 웍스 권한은 <strong>"링크 가진 사람 열람 가능"</strong>이어야 열림</li>
+      </ul>
+    </div>
+
+    <div class="sub-head">사용 프롬프트</div>
+    <div class="rec-card2">
+      <div class="rc-row"><span class="rc-key">저장</span><span>[레퍼런스 저장] 제목 / 링크 / 제품 / 카테고리 / 메모 &nbsp;<em>(제품은 대충 적어도 BQ 표준명 자동 매핑)</em></span></div>
+      <div class="rc-row"><span class="rc-key">찾기</span><span>[레퍼런스 찾기] 키워드 &nbsp;<em>(예: 릴렉스틱볼 / 경쟁사 / EMS손목마사지기 광고소재)</em></span></div>
+      <div class="rc-row"><span class="rc-key">열기</span><span>[레퍼런스 열기] 제목 또는 id</span></div>
+      <div class="rc-row"><span class="rc-key">삭제</span><span>[레퍼런스 삭제] id</span></div>
+    </div>
+
+    <div class="sub-head"><code>ref_videos</code> 테이블</div>
+    <div class="tmpl-wrap">
+      <table class="tmpl-table">
+        <thead><tr><th>컬럼</th><th>내용</th><th>입력</th></tr></thead>
+        <tbody>
+          <tr><td>id / created_at</td><td>고유번호 · 수집일시</td><td>자동</td></tr>
+          <tr><td>title / url</td><td>제목 / 웍스 공유 링크</td><td>직접</td></tr>
+          <tr><td>product</td><td>BQ 표준 제품명(없으면 공통)</td><td>직접→자동매핑</td></tr>
+          <tr><td>category</td><td>광고소재·경쟁사·후기 등</td><td>직접</td></tr>
+          <tr><td>source / memo</td><td>출처(도메인 자동 판별) / 메모</td><td>자동 / 직접</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-block" style="margin-top:12px">🔗 이 <code>ref_videos</code>가 <strong>Step 2 수집물의 저장소</strong>이자, 향후 <strong>Step 5 기획서 연동</strong>(필드 ↔ 레퍼런스 프레임)의 데이터 소스가 된다. <em>조회는 barybody-data MCP로도 가능하나, 저장·삭제는 ref_videos.py(서비스 계정)로만.</em></div>
   </div>
 
   <div class="report-footer">소재 발굴 방법론 · 목적·목표 구조 정리본</div>
