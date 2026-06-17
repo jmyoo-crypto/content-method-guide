@@ -89,6 +89,22 @@ em{color:#aeb6c2;font-style:italic}
 /* ── 흐름 단계 라벨 ── */
 .flow-phase{font-size:12px;font-weight:700;color:#8b919c;letter-spacing:.5px;margin:8px 0 14px;padding-bottom:6px;border-bottom:1px dashed #2a2f3a}
 
+/* ── 전체 프로세스 맵 ── */
+.proc-phase{margin-bottom:16px}
+.proc-phase .pp-head{font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:11px}
+.proc-phase.pp1 .pp-head{color:#60a5fa}
+.proc-phase.pp2 .pp-head{color:#fbbf24}
+.proc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.proc-step{background:#11161d;border:1px solid #262b35;border-radius:9px;padding:11px 12px}
+.proc-step .ps-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:700;color:#fff}
+.proc-step .ps-title{font-size:12.5px;font-weight:700;color:#e9edf2;margin:7px 0 3px}
+.proc-step .ps-desc{font-size:11px;color:#8b919c;line-height:1.5}
+.proc-phase .pp-out{font-size:12px;color:#9aa0a6;margin-top:10px}
+.proc-phase .pp-out strong{color:#cbd2dc}
+.proc-loop{background:#1a1330;border:1px solid #3a2a5e;border-radius:8px;padding:12px 16px;font-size:12.5px;color:#c4b5fd;margin-top:4px;line-height:1.6}
+.proc-loop strong{color:#ddd6fe}
+@media(max-width:720px){.proc-grid{grid-template-columns:repeat(2,1fr)}}
+
 .report-footer{text-align:center;font-size:12px;color:#6b7280;padding:20px 0 8px}
 
 @media(max-width:640px){
@@ -140,6 +156,37 @@ em{color:#aeb6c2;font-style:italic}
         </td>
       </tr>
     </table>
+  </div>
+
+  <!-- 전체 프로세스 맵 -->
+  <div class="section">
+    <div class="section-title"><span class="step-num" style="background:#0ea5e9">🗺️</span> 전체 프로세스 한눈에</div>
+
+    <div class="proc-phase pp1">
+      <div class="pp-head">PHASE 1 — 탐색해서 "이 사람을 안다"</div>
+      <div class="proc-grid">
+        <div class="proc-step"><span class="ps-num" style="background:#3b82f6">1</span><div class="ps-title">콘텐츠 정의</div><div class="ps-desc">제품 빼고 뭘 보는지</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#3b82f6">2</span><div class="ps-title">수집·기록</div><div class="ps-desc">관찰+의문 미친 듯이</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#3b82f6">3</span><div class="ps-title">인사이트</div><div class="ps-desc">왜?×3 → 진짜 심리</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#3b82f6">4</span><div class="ps-title">제품 관점</div><div class="ps-desc">마음 ↔ 지갑 연결</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#10b981">5</span><div class="ps-title">페르소나 정의</div><div class="ps-desc">한 문장 북극성</div></div>
+      </div>
+      <div class="pp-out">→ 산출물: <strong>흔들리지 않는 판단 기준(북극성)</strong></div>
+    </div>
+
+    <div class="proc-phase pp2">
+      <div class="pp-head">PHASE 2 — 집행해서 "위너를 만든다"</div>
+      <div class="proc-grid">
+        <div class="proc-step"><span class="ps-num" style="background:#10b981">6</span><div class="ps-title">기획서</div><div class="ps-desc">검증 가능한 후보로</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#f59e0b">7</span><div class="ps-title">제작·집행</div><div class="ps-desc">시장에서 테스트</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#f59e0b">8</span><div class="ps-title">위너 선별</div><div class="ps-desc">지표로 확정 + 왜 이김</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#ef4444">9</span><div class="ps-title">위너 디벨롭 ★</div><div class="ps-desc">이긴 요소 변주</div></div>
+        <div class="proc-step"><span class="ps-num" style="background:#8b5cf6">10</span><div class="ps-title">자산 축적</div><div class="ps-desc">인사이트 라이브러리</div></div>
+      </div>
+      <div class="pp-out">→ 산출물: <strong>위너 소재 + 재사용 가능한 인사이트 자산</strong></div>
+    </div>
+
+    <div class="proc-loop">🔁 <strong>핵심은 루프</strong> — 8 ↔ 9를 돌릴수록 위너가 늘고, 10에 검증된 인사이트가 쌓일수록 다음 사이클이 빨라진다. 이 누적이 곧 <strong>"방법론을 내 것으로"</strong>(= 큰 틀 목적의 실현).</div>
   </div>
 
   <!-- 핵심 원칙 -->
