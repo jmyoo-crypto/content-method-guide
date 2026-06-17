@@ -333,6 +333,29 @@ em{color:#aeb6c2;font-style:italic}
       </ul>
     </div>
     <div class="note-block">🔗 <strong>제품·VP·카피는 여기서 합류</strong> — 콘텐츠 심리 인사이트(Step 3)에 <strong>제품 근거(리뷰의 좋은 이유·불만)</strong>를 더해 소구점·헤드라인을 이 기획서에 담는다. <em>(소재 발굴은 심리까지, 메시지 완성은 VP·카피 — 그 둘이 기획서에서 만난다)</em></div>
+
+    <div class="sub-head">🛠 기획서 폼 고도화 — 구현 예정 <span class="tag tag-prop">권한 받는 즉시</span></div>
+    <table class="purpose-table">
+      <tr><td class="col-head ch-why"></td><td class="pg-cell">기존에 분석·찾았던 <strong>페르소나 + 레퍼런스</strong> 기반으로 <strong>방향성을 유지하며</strong> 기획서를 쓰기 위해</td></tr>
+      <tr><td class="col-head ch-goal"></td><td class="pg-cell">각 메시지·구성 칸에 <strong>참조 레퍼런스의 프레임(비트)을 연동 표시</strong> — 예: 오프닝 후크 칸에 3초 멘트를 적으면, 그 근거가 된 <strong>레퍼런스의 ①훅 프레임</strong>이 옆에 뜬다</td></tr>
+    </table>
+    <p style="font-size:12.5px;color:#9aa0a6;margin:12px 0 4px">후크만이 아니라 <strong style="color:#cbd2dc">메시지·구성 전체</strong>를 페르소나/레퍼런스 프레임과 묶는다:</p>
+    <div class="tmpl-wrap">
+      <table class="tmpl-table">
+        <thead><tr><th>기획서 필드</th><th>연동 소스 (어디서 끌어오나)</th></tr></thead>
+        <tbody>
+          <tr><td>타깃 (연령·성별·관심사·구매동기·페인포인트)</td><td>Step 4 <strong>페르소나 정의</strong> (자동 채움 → 재입력 X)</td></tr>
+          <tr><td>소구점·경쟁 차별점·톤앤매너</td><td>VP·카피 (언어 신호 + 제품 근거)</td></tr>
+          <tr><td>키워드·해시태그</td><td><strong>/키워드분석</strong></td></tr>
+          <tr><td>오프닝 후크 (첫 3초)</td><td>레퍼런스 <strong>①훅</strong> 비트 ← <em>핵심 연동</em></td></tr>
+          <tr><td>메인 메시지</td><td>레퍼런스 <strong>③빌드·④페이오프</strong> 비트</td></tr>
+          <tr><td>CTA</td><td>레퍼런스 <strong>⑤CTA</strong> 비트</td></tr>
+          <tr><td>구성 흐름 (오프닝→본론→클로징)</td><td>레퍼런스 <strong>5비트 구조</strong> 전체</td></tr>
+          <tr><td>레퍼런스</td><td>Step 2 수집물 (<code>assetdb_references</code>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-block" style="margin-top:12px">🗄 <strong>데이터 연결</strong> — <code>assetdb_references</code>(프레임별 분석) → <code>assetdb_plans</code>(기획서). 기획서의 각 필드가 <strong>어떤 레퍼런스의 어떤 비트를 참조했는지 키로 물려두면</strong>, "이 후크 왜 이렇게 썼지?"의 출처가 항상 추적된다. <em>(폼 권한 받으면 이 두 테이블부터 확인)</em></div>
   </div>
 
   <div class="flow-phase">PHASE 2. 집행 → 위너 검증 → 디벨롭 → 자산화</div>
