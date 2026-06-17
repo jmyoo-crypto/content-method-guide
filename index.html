@@ -100,6 +100,18 @@ em{color:#aeb6c2;font-style:italic}
 /* ── 흐름 단계 라벨 ── */
 .flow-phase{font-size:12px;font-weight:700;color:#8b919c;letter-spacing:.5px;margin:8px 0 14px;padding-bottom:6px;border-bottom:1px dashed #2a2f3a}
 
+/* ── 기록 템플릿(부록) ── */
+.rec-card2{background:#0e1417;border:1px solid #262b35;border-radius:8px;padding:14px 16px;margin-top:6px}
+.rec-card2 .rc-concl{font-weight:700;color:#5eead4;font-size:13px;margin-bottom:11px;padding-bottom:9px;border-bottom:1px dashed #262b35}
+.rc-row{font-size:12.5px;color:#cbd2dc;margin-bottom:7px;display:flex;gap:10px;line-height:1.55}
+.rc-row:last-child{margin-bottom:0}
+.rc-row .rc-key{flex:0 0 92px;color:#8b919c;font-weight:600}
+.tmpl-wrap{overflow-x:auto;margin-top:6px}
+.tmpl-table{width:100%;border-collapse:collapse;font-size:12px;min-width:640px}
+.tmpl-table th{background:#11161d;color:#9aa0a6;font-weight:600;padding:8px 10px;border:1px solid #262b35;text-align:left;white-space:nowrap}
+.tmpl-table td{padding:8px 10px;border:1px solid #262b35;color:#aeb6c2}
+.sub-head{font-size:13px;font-weight:700;color:#e9edf2;margin:18px 0 4px}
+
 /* ── 전체 프로세스 맵 ── */
 .proc-phase{margin-bottom:16px}
 .proc-phase .pp-head{font-size:12px;font-weight:700;letter-spacing:.5px;margin-bottom:11px}
@@ -414,6 +426,43 @@ em{color:#aeb6c2;font-style:italic}
   <div class="summary-strip">
     <div class="ss-label">한 줄 요약</div>
     <div class="ss-text">인사이트로 후보를 만들고 → 집행으로 검증해 <strong>위너를 가려내고</strong> → 위너를 변주해 키우며 → 그 인사이트를 <strong>자산으로 쌓는다.</strong> 이 루프의 기록이 곧 방법론.</div>
+  </div>
+
+  <!-- 부록 — 기록 템플릿 -->
+  <div class="section">
+    <div class="section-title"><span class="step-num" style="background:#0d9488">📎</span> 부록 — 기록을 "누가 봐도 이해되게"</div>
+    <p style="font-size:13px;color:#9aa0a6;margin-bottom:4px">콘텐츠를 찾고 인사이트를 기록할 때(Step 2·3·4·5·10), <strong style="color:#cbd2dc">기록 틀을 고정</strong>하면 나만 알아보던 메모가 누가 봐도 읽히는 자산이 된다.</p>
+
+    <div class="sub-head">원칙 4</div>
+    <ul class="principle-list">
+      <li><strong>사실과 해석을 분리한다</strong> (제일 중요) — "여행 브이로그를 끝까지 본다"(관찰=사실)와 "대리만족 때문"(인사이트=해석)을 섞지 않는다</li>
+      <li><strong>근거를 같이 남긴다</strong> — 링크·캡처·신호 수치(저장 N). "왜 그렇게 판단했는지" 추적 가능하게</li>
+      <li><strong>한 기록 = 한 인사이트</strong> — 여러 개 뭉치지 말고 쪼갠다 (나중에 분류·검색됨)</li>
+      <li><strong>맨 위에 '결론 한 줄'</strong> — 바쁜 사람은 그 한 줄만 봐도 알게</li>
+    </ul>
+
+    <div class="sub-head">카드형 — 메모 한 건 단위</div>
+    <div class="rec-card2">
+      <div class="rc-concl">🔹 결론 한 줄 — 이 타겟은 여행 콘텐츠를 '대리만족'으로 소비한다</div>
+      <div class="rc-row"><span class="rc-key">관찰(사실)</span><span>여행 브이로그를 끝까지 시청, 저장 多</span></div>
+      <div class="rc-row"><span class="rc-key">의문</span><span>정작 본인은 여행 못 가는데 왜 이렇게 많이 보지?</span></div>
+      <div class="rc-row"><span class="rc-key">인사이트(해석)</span><span>못 가는 결핍을 영상으로 푼다 = 대리만족</span></div>
+      <div class="rc-row"><span class="rc-key">근거</span><span>(링크) + 저장 320 / 댓글 "나도 가고 싶다" 多</span></div>
+      <div class="rc-row"><span class="rc-key">소재 적용</span><span>"5분이면 끝나는 여행 같은 휴식" 후킹</span></div>
+    </div>
+
+    <div class="sub-head">시트형 — 대량 수집용 컬럼</div>
+    <div class="tmpl-wrap">
+      <table class="tmpl-table">
+        <thead>
+          <tr><th>날짜</th><th>콘텐츠 유형</th><th>관찰(사실)</th><th>링크</th><th>신호(저장·완시청)</th><th>의문</th><th>인사이트(심리)</th><th>소재 적용 아이디어</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>6/17</td><td>여행 브이로그</td><td>끝까지 시청, 저장 多</td><td>(URL)</td><td>저장 320</td><td>못 가는데 왜?</td><td>대리만족</td><td>"5분 여행 같은 휴식" 후킹</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-block" style="margin-top:14px">컬럼만 채우면 위 <strong>원칙 4</strong>가 자동으로 지켜지고, 그대로 <strong>Step 10 인사이트 라이브러리</strong>로 쌓인다.</div>
   </div>
 
   <div class="report-footer">소재 발굴 방법론 · 목적·목표 구조 정리본</div>
