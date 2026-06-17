@@ -340,17 +340,26 @@ em{color:#aeb6c2;font-style:italic}
       <tr><td class="col-head ch-why"></td><td class="pg-cell">기존에 분석·찾았던 <strong>페르소나 + 레퍼런스</strong> 기반으로 <strong>방향성을 유지하며</strong> 기획서를 쓰기 위해</td></tr>
       <tr><td class="col-head ch-goal"></td><td class="pg-cell">각 메시지·구성 칸에 <strong>참조 레퍼런스의 프레임(비트)을 연동 표시</strong> — 예: 오프닝 후크 칸에 3초 멘트를 적으면, 그 근거가 된 <strong>레퍼런스의 ①훅 프레임</strong>이 옆에 뜬다</td></tr>
     </table>
-    <p style="font-size:12.5px;color:#9aa0a6;margin:12px 0 4px">후크만이 아니라 <strong style="color:#cbd2dc">메시지·구성 전체</strong>를 페르소나/레퍼런스 프레임과 묶는다:</p>
+    <p style="font-size:12.5px;color:#9aa0a6;margin:12px 0 4px"><span class="tag tag-rec">기존</span> = 지금 기획서 폼(카피리스트)에 있던 항목 그대로 / <span class="tag tag-prop">고도화</span> = 이번에 더한 연동. 후크만이 아니라 <strong style="color:#cbd2dc">전 필드</strong>를 페르소나·레퍼런스 프레임과 묶는다.</p>
     <div class="tmpl-wrap">
       <table class="tmpl-table">
-        <thead><tr><th>기획서 필드</th><th>연동 소스 (어디서 끌어오나)</th></tr></thead>
+        <thead><tr><th>기획서 필드 <span class="tag tag-rec">기존 폼</span></th><th>연동 소스 <span class="tag tag-prop">고도화</span></th></tr></thead>
         <tbody>
-          <tr><td>타깃 (연령·성별·관심사·구매동기·페인포인트)</td><td>Step 4 <strong>페르소나 정의</strong> (자동 채움 → 재입력 X)</td></tr>
-          <tr><td>소구점·경쟁 차별점·톤앤매너</td><td>VP·카피 (언어 신호 + 제품 근거)</td></tr>
+          <tr><td colspan="2" style="background:#11161d;color:#7dd3fc;font-weight:700;font-size:11.5px">1. 기획 내용 — 타깃</td></tr>
+          <tr><td>연령·성별</td><td>Step 4 <strong>페르소나 정의</strong> (자동 채움)</td></tr>
+          <tr><td>관심사·라이프스타일</td><td>Step 4 페르소나 정의</td></tr>
+          <tr><td>구매 동기·니즈</td><td>Step 4 페르소나 + VP</td></tr>
+          <tr><td>고민·페인포인트</td><td>Step 4 페르소나 + VP</td></tr>
+          <tr><td colspan="2" style="background:#11161d;color:#7dd3fc;font-weight:700;font-size:11.5px">1. 기획 내용 — 소구</td></tr>
+          <tr><td>주요 소구점 (감정·기능·사회적)</td><td>VP·카피 (언어 신호 + 제품 근거)</td></tr>
+          <tr><td>경쟁 차별점 &amp; 톤앤매너</td><td>VP·카피</td></tr>
           <tr><td>키워드·해시태그</td><td><strong>/키워드분석</strong></td></tr>
+          <tr><td colspan="2" style="background:#11161d;color:#7dd3fc;font-weight:700;font-size:11.5px">2. 메시지</td></tr>
           <tr><td>오프닝 후크 (첫 3초)</td><td>레퍼런스 <strong>①훅</strong> 비트 ← <em>핵심 연동</em></td></tr>
           <tr><td>메인 메시지</td><td>레퍼런스 <strong>③빌드·④페이오프</strong> 비트</td></tr>
-          <tr><td>CTA</td><td>레퍼런스 <strong>⑤CTA</strong> 비트</td></tr>
+          <tr><td>CTA (행동 유도)</td><td>레퍼런스 <strong>⑤CTA</strong> 비트</td></tr>
+          <tr><td colspan="2" style="background:#11161d;color:#7dd3fc;font-weight:700;font-size:11.5px">3. 비주얼 &amp; 레퍼런스</td></tr>
+          <tr><td>촬영 컨셉·분위기 <span class="tag tag-mine">누락→복구</span></td><td>레퍼런스 비주얼 톤·무드</td></tr>
           <tr><td>구성 흐름 (오프닝→본론→클로징)</td><td>레퍼런스 <strong>5비트 구조</strong> 전체</td></tr>
           <tr><td>레퍼런스</td><td>Step 2 수집물 (<code>assetdb_references</code>)</td></tr>
         </tbody>
