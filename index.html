@@ -280,6 +280,7 @@ em{color:#aeb6c2;font-style:italic}
       </ul>
       <div class="h-foot">⚠️ <strong>유사 카테고리만 보면 모두가 같은 소재</strong>를 만든다 — 다른 카테고리·해외·자사 신호를 꼭 섞어라.<br>💬 리뷰·댓글·검색어 같은 <strong>'고객 언어'는 소재(영상) 레퍼런스가 아니다</strong> → Step 3에서 '왜 좋아하나' 해석 + 기획서(Step 5) 메시지(VP·카피)의 원재료로 쓴다.</div>
     </div>
+    <div class="note-block">🎯 <strong>후킹·홀딩 보관함 (타겟과 무관해도 OK)</strong> — 모든 소재가 꼭 페르소나와 엮일 필요는 없다. 보다가 <strong>후킹이 유독 좋은 소재</strong>나 <strong>끝까지 보게 되는(홀딩) 소재</strong>를 만나면, 타겟과 안 엮여도 <strong>후킹함 / 홀딩함에 따로</strong> 모은다(메모: "얘는 이래서 후킹이 좋았다"). 이것도 소재 아이데이션의 한 방법 — "모든 소재가 타겟과 겹쳐야 한다"는 강박은 버린다.</div>
     <div class="note-block">🎬 수집한 레퍼런스 영상은 BQ <code>ref_videos</code> 테이블에 색인해 관리한다(저장·검색·열기) → <strong>부록 3</strong> 참고</div>
   </div>
 
@@ -317,6 +318,7 @@ em{color:#aeb6c2;font-style:italic}
         <li>이 페르소나는 결국 무엇을, 왜 좋아하나?</li>
       </ul>
     </div>
+    <div class="note-block">🗂 <strong>페르소나 카드 3단 구조</strong> — 대분류 <strong>나이</strong> → 중분류 <strong>라이프스타일</strong> → 소분류 <strong>욕망</strong>. 이 분류로 세부 페르소나를 정리하면 DB에서 골라 쓰기 쉽다.</div>
   </div>
 
   <!-- Step 5 -->
@@ -413,6 +415,7 @@ em{color:#aeb6c2;font-style:italic}
         <li>모인 위너들의 평균이 <strong>우리만의 벤치마크(절대 기준선)</strong>가 된다 → "훅률 N% 이상이면 위너" 식으로 승격 <em>(= Step 9 자산화와 직결: 기준선 자체가 쌓이는 자산)</em></li>
       </ul>
     </div>
+    <div class="note-block">⚠️ <strong>정량 맹신 금지 — 정성 분석 병행</strong> &nbsp;숫자로 표현 안 되는 이유가 정말 많다. 지표는 성과 분석의 <strong>일부</strong>일 뿐, "왜 이겼나/졌나"의 <strong>정성적 해석</strong>을 함께 봐야 한다. <em>(감으로만도, 숫자로만도 X)</em></div>
   </div>
 
   <!-- Step 8 -->
@@ -548,6 +551,7 @@ em{color:#aeb6c2;font-style:italic}
     <div class="sub-head">🔻 1층 — 개별 레퍼런스 = 프레임별로 입력</div>
     <div class="rec-card2">
       <div class="rc-row"><span class="rc-key">기본</span><span>링크 / 콘텐츠 유형 / 신호(저장·훅률 등)</span></div>
+      <div class="rc-row"><span class="rc-key">타겟 연관성</span><span>이 소재가 왜 이 페르소나와 맞나 (안 맞으면 → 후킹·홀딩 보관함으로)</span></div>
       <div class="rc-row"><span class="rc-key">① 훅</span><span>무슨 장치로 멈추게 했나 (예: "이거 모르면 손해" 어그로)</span></div>
       <div class="rc-row"><span class="rc-key">② 홀드</span><span>어떻게 안 떠나게 붙잡았나 (예: "끝까지 보면 반전" 떡밥)</span></div>
       <div class="rc-row"><span class="rc-key">③ 빌드</span><span>무슨 가치/스토리로 몰입시켰나</span></div>
@@ -618,6 +622,23 @@ em{color:#aeb6c2;font-style:italic}
       </table>
     </div>
     <div class="note-block" style="margin-top:12px">🔗 이 <code>ref_videos</code>가 <strong>Step 2 수집물의 저장소</strong>이자, 향후 <strong>Step 5 기획서 연동</strong>(필드 ↔ 레퍼런스 프레임)의 데이터 소스가 된다. <em>조회는 barybody-data MCP로도 가능하나, 저장·삭제는 ref_videos.py(서비스 계정)로만.</em></div>
+  </div>
+
+  <!-- 부록 4 — 소재 DB 구조 -->
+  <div class="section">
+    <div class="section-title"><span class="step-num" style="background:#0d9488">🗄️</span> 부록 4 — 소재 데이터베이스 구조 (3-메뉴)</div>
+    <p style="font-size:13px;color:#9aa0a6;margin-bottom:4px">방법론의 산출물이 실제로 쌓이는 DB는 상단 <strong style="color:#cbd2dc">3개 메뉴</strong>로 구성된다. (BQ 백엔드 저장 → 휘발성 없는 자산)</p>
+    <div class="tmpl-wrap">
+      <table class="tmpl-table">
+        <thead><tr><th>메뉴</th><th>내용</th><th>방법론 단계</th></tr></thead>
+        <tbody>
+          <tr><td><strong>① 페르소나</strong></td><td>나이 &gt; 라이프스타일 &gt; 욕망 (대·중·소분류) — 조사 내용 적재</td><td>Step 4</td></tr>
+          <tr><td><strong>② 레퍼런스</strong></td><td>레퍼런스 로그 + <strong>종합 인사이트</strong> + <strong>후킹·홀딩 보관함</strong>(타겟 무관 OK)</td><td>Step 2·3</td></tr>
+          <tr><td><strong>③ 기획서</strong></td><td>기획서 로그 → 소재 제작·테스트 → <strong>성과 자동 연동</strong></td><td>Step 5·6·7</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note-block">쌓일수록 <strong>휘발성 없는 자산</strong>이 된다 → Step 9 인사이트 라이브러리와 직결. <em>(도구 만들 때 핵심 기준: "이걸 실제로 내가 쓸까?" — 안 쓸 것 같으면 가치 없음)</em></div>
   </div>
 
   <div class="report-footer">소재 발굴 방법론 · 목적·목표 구조 정리본</div>
